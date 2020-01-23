@@ -8,6 +8,7 @@ const SearchController = require('./controllers/SearchController')
 
 routes.get('/devs',DevController.index);
 routes.post('/devs',DevController.store);
+routes.delete('/devs/:_id',DevController.destroy)
 
 routes.get('/search', SearchController.index)
 

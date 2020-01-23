@@ -7,7 +7,8 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://devradar:devradar@cluster0-gvztr.mongodb.net/devradar?retryWrites=true&w=majority',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
-    useCreateIndex:true
+    useCreateIndex:true,
+    useFindAndModify:false
 });
 
 app.use(cors());

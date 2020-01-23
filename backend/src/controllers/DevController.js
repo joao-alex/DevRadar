@@ -47,5 +47,13 @@ module.exports = {
     async index(req,res){
         const devs = await Dev.find();
         return res.send(devs);
+    },
+
+    async destroy(req,res){
+        Dev.findByIdAndRemove(req.params._id,(err,dev)=>{
+            if(err) return res.status(500).send(err);
+
+            return res.status(200).send(dev);
+        })
     }
 };

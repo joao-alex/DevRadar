@@ -4,7 +4,6 @@ li.dev-item{
     border-radius: 5px;
     padding:20px;
     box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
-    max-height: 200px;
 }
 
 li.dev-item header{
@@ -64,4 +63,23 @@ li.dev-item a:hover{
     display: flex;
     flex-direction: column;
     margin-right: 15px;
+}
+
+button.btn{
+    border:0;
+    border-radius: 2px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #5c1dd1;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.5s;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+button.btn:hover{
+    background: #5017bb;
 }
