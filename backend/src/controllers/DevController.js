@@ -55,5 +55,25 @@ module.exports = {
 
             return res.status(200).send(dev);
         })
+    },
+    
+    async update(req,res){
+        const dev = await Dev.findById(req.params._id)
+        const responseCity = await axios.get(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${req.query.latitude}&lon=${req.query.longitude}`);
+
+        const { address } = responseCity.data
+
+        const state = parseStateAsStateCode(address.state)
+
+        const city = `${address.village?address.village:address.town ? address.town:address.city} - ${state}`;
+        
+        dev.location.coordinates = [req.query.longitude,req.query.latitude];
+        dev.city = city
+        dev.save((err,prod)=>{
+            if(err)
+                return res.status(500);
+            
+            return res.status(200).send(dev);
+        })
     }
 };
