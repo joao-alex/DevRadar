@@ -83,3 +83,11 @@ button.btn{
 button.btn:hover{
     background: #5017bb;
 }
+
+input{
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid #eee;
+    margin-right: 15px;
+}
